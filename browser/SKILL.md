@@ -1,8 +1,8 @@
-# /browser — Browser automation via justclaw Chrome extension
+# /browser — Browser automation via Chrome browser extension
 
-Automate Chrome from Claude Code using justclaw's browser bridge. 72 commands across 12 categories: tab management, screenshots, form filling, data extraction, device emulation, network capture, and more.
+Automate Chrome from Claude Code using the browser bridge extension. 72 commands across 12 categories: tab management, screenshots, form filling, data extraction, device emulation, network capture, and more.
 
-**Requires**: justclaw dashboard running (`pm2 list` → `justclaw-dashboard` online) + Chrome extension installed.
+**Requires**: browser bridge running + Chrome extension installed.
 
 ## Setup
 

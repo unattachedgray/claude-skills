@@ -1,6 +1,6 @@
 # /dev — Structured development lifecycle
 
-Seven-phase development process inspired by Garry Tan's gstack methodology, adapted for Claude Code with justclaw persistence. Each phase has a distinct role and output that feeds the next.
+Seven-phase development process inspired by Garry Tan's gstack methodology, adapted for Claude Code with task persistence. Each phase has a distinct role and output that feeds the next.
 
 **Core principle**: Process enables speed. Skipping phases creates rework. Following them lets you ship faster by catching issues early instead of debugging them late.
 
@@ -38,7 +38,7 @@ If no mode specified, infer from context. If ambiguous, ask.
 ### For `fix` / `debug`:
 1. **Reproduce** — Get the exact error. Read logs, check stack traces, run the failing case.
    - `git log --oneline -10` for recent changes that might have caused it
-   - Check DB state if relevant (`sqlite3 data/charlie.db`)
+   - Check DB state if relevant (`sqlite3 data/app.db`)
 2. **Isolate** — Narrow to the smallest reproducing case. Which file? Function? Input?
 3. **Gather evidence** — Read the actual code paths involved, not just the error message.
 
@@ -207,15 +207,15 @@ Coverage: {areas covered}
 **Goal**: Learn from the work. Future sessions should be smarter because of this one.
 
 ### Process:
-1. **Log the work**: `mcp__justclaw__daily_log_add` with a summary of what was done.
+1. **Log the work**: `TaskCreate` with a summary of what was done.
 2. **Save learnings**: If anything was surprising, non-obvious, or went wrong:
-   - `mcp__justclaw__learning_add` with category, trigger, lesson, area
+   - `TaskCreate` with category, trigger, lesson, area
 3. **Update docs**: If behavior changed, update the relevant docs:
    - `CLAUDE.md` for behavior/architecture changes
    - `docs/SCHEMA.md` for database changes
    - `docs/DISCORD-BOT.md` for bot behavior changes
 4. **Create follow-up tasks**: If you noticed things that need attention but aren't part of this change:
-   - `mcp__justclaw__task_create` with clear description
+   - `TaskCreate` with clear description
 
 ### Report:
 ```

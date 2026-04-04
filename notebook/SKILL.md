@@ -1,6 +1,6 @@
 # /notebook — Document-grounded analysis (NotebookLM-style)
 
-Point to a folder of documents. Justclaw ingests them, indexes with FTS5, and becomes an expert on their contents — answering questions with source citations, generating overviews, and synthesizing across documents.
+Point to a folder of documents. The system ingests them, indexes with FTS5, and becomes an expert on their contents — answering questions with source citations, generating overviews, and synthesizing across documents.
 
 ## Arguments
 
@@ -90,7 +90,7 @@ Discord streaming [source:bot.ts:274-347] for real-time progress display.
 /notebook overview ai-papers
 /notebook faq ai-papers
 
-/notebook create justclaw ~/temp/justclaw/src/
-/notebook ask justclaw "how does the heartbeat system detect stuck processes?"
-/notebook sources justclaw
+/notebook create myproject ~/projects/myapp/src/
+/notebook ask myproject "how does authentication work?"
+/notebook sources myproject
 ```

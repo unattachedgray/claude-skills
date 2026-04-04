@@ -1,6 +1,6 @@
 # Security Audit
 
-Run a security audit of the justclaw installation and report findings.
+Run a security audit of the system installation and report findings.
 
 ## Checks
 
@@ -15,7 +15,7 @@ Verify `.env` is in `.gitignore`. Check for hardcoded tokens in source.
 ### 2. File Permissions on data/
 ```bash
 ls -la data/ 2>/dev/null
-stat -c '%a %U:%G %n' data/charlie.db data/*.pid 2>/dev/null
+stat -c '%a %U:%G %n' data/app.db data/*.pid 2>/dev/null
 ```
 Database and PID files should be 600 or 644, owned by the current user. Directory should be 700 or 755.
 
@@ -35,15 +35,12 @@ Only port 8787 (dashboard) should be bound. Flag unexpected listeners.
 ### 5. Dashboard Authentication
 Check if `DASHBOARD_AUTH_PASSWORD` is set in `.env`. If not, dashboard is unauthenticated — flag as warning (acceptable for local-only, risky if exposed).
 
-### 6. JUSTCLAW_NO_DASHBOARD in MCP Config
-```bash
-cat .mcp.json | jq '.mcpServers.justclaw.env.JUSTCLAW_NO_DASHBOARD'
 ```
 Must be `"1"` — prevents MCP server from interfering with PM2 dashboard.
 
 ### 7. SQLite Integrity
 ```bash
-sqlite3 data/charlie.db "PRAGMA integrity_check; PRAGMA journal_mode;"
+sqlite3 data/app.db "PRAGMA integrity_check; PRAGMA journal_mode;"
 ```
 Must return `ok` and `wal`.
 

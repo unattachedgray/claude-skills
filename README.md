@@ -19,7 +19,7 @@ curl -sL https://raw.githubusercontent.com/unattachedgray/claude-skills/main/$SK
   -o ~/.claude/skills/$SKILL/SKILL.md
 ```
 
-## Skills (84)
+## Skills (76)
 
 ### Development Lifecycle
 
@@ -165,15 +165,6 @@ curl -sL https://raw.githubusercontent.com/unattachedgray/claude-skills/main/$SK
 | [skill-factory](skill-factory/) | Create new skills by researching and composing existing ones |
 | [find-skills](find-skills/) | Discover and install skills from the ecosystem |
 
-### System (internal)
-
-| Skill | Description |
-|-------|-------------|
-| [charlie-system](charlie-system/) | Core personality and session context |
-| [context-flush](context-flush/) | Pre-compaction memory flush to SQLite |
-| [morning-briefing](morning-briefing/) | Daily briefing: reviews tasks, conversations, plans the day |
-| [daily-goals](daily-goals/) | Goal-driven task generation |
-| [task-review](task-review/) | Pick highest-priority task and work it |
 
 ## How Skills Work
 
@@ -187,7 +178,7 @@ A skill is a markdown file at `~/.claude/skills/<name>/SKILL.md`. Claude Code lo
 
 - Added Temporal (durable execution) guidance to agent-development, advanced-agents, senior-devops, senior-data-engineer, and backend-development skills
 - Pretext-layout text verification integrated across frontend skills
-- 84 skills total (up from 16)
+- 76 skills total (up from 16), removed personal/platform-specific skills
 
 ## License
 
